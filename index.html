@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Header Section-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1</title>
+    <!--Insert bootstrap CSS file-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <!--Connect Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--Align nav items to center-->
+    <style>
+      :root {
+        --navbar-color: #DAF7A6;
+        --showcase-color: #000000;
+        --bio-color: #FFC300;
+        --webtech-color: #EC7063;
+        --competence-color: #9CDA0D;
+        --statement-color: #F27A09;
+      }
+      .navbar-nav.navbar-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .bg-image {
+        background-image: url(IMAGES-20240726/javascript-code.jpg);
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+      .bg-text {
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        position: relative;
+        top: -50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        padding: 10px;
+        text-align: center;
+        
+      }
+      
+      .flip-box {
+      background-color: transparent;
+      width: 100%;
+      height: 35vh;
+      border: 1px solid #f1f1f1;
+      perspective: 1000px;
+    }
+
+    .flip-box-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-box:hover .flip-box-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-box-front,
+    .flip-box-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .flip-box-front {
+      background-color: #bbb;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      /* Stack elements vertically */
+      height: 100%;
+      /* Ensure it takes up the full height */
+      text-align: center;
+    }
+
+    .flip-box-back {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      /* Ensure the flip-box-back takes up the full height */
+      text-align: center;
+      background-color: dodgerblue;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .flip-box-back p {
+      position: relative;
+      width: fit-content;
+      display: inline-block;
+    }
+
+    #flipimg {
+      height: 20vh;
+      border-radius: 50%;
+      margin: auto;
+    }
+
+      .container {
+        display: flex;
+      }
+
+      .item-2 {
+        width: 500px;
+        text-align: right;
+      }
+      .webtech-head{
+        font-size: 16px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 700;
+      }
+      .webtech-head-2{
+        font-size: 14px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+        color: blue;
+      }
+
+      .list-item {
+        height: 50px;
+        margin-left: 10px;
+        color: black;
+        font-size: 12px;
+        font-weight: 300;
+      }
+      .list-item span {
+        color: blue;
+        font-size: 14px;
+        font-weight: 400;
+      }
+      .web-tech-li li{
+        margin-top: 20px;
+      }
+
+    @media (max-width: 800px) {
+      .flex-container {
+        flex-direction: column;
+      }
+
+      .item-2, .sub-item {
+        font-size: 15px;
+      }
+
+      .flip-box-back p{
+        font-size: 15px;
+      }
+
+      .web-tech-li, .list-item span {
+        font-size: 15px;
+      }
+
+      .web-tech-li, .list-item li {
+        font-size: 15px;
+      }
+    }
+
+    </style>
+</head>
+
+
+<!--Body Section-->
+<body>
+
+  <!--Add the search area containing search box and search button-->
+
+  <div class="collapse" id="collapseSearchBox">
+    <form>
+      <input type="search">
+      <button class="btn btn-outline-success" type="submit">Search</button> 
+    </form>
+
+  </div>
+
+    <!--Bootstrap navbar-->
+    <nav class="navbar navbar-expand-lg" style="height: 10vh; background-color: var(--navbar-color);">
+        <div class="container-fluid border-primary">
+          <!--Globe Icon-->            
+            <a class="navbar-brand" href="#"><span class="fs-2 bi bi-globe"></span>ITWD6.408</a>
+
+            <!--Insert Search Icon for SMALL SCREENS-->
+            <button class="btn d-inline d-lg-none" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#collapseSearchBox">
+              <span class="bi bi-search fs3"></span>
+            </button>
+
+            <!--This is a hamburger menu button (responsive design)-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          
+          <!--Nav bar + items + center the navbar-->
+            <div class="collapse navbar-collapse d-lg-flex justify-content-center" id="navbarSupportedContent">
+            <div class="navbar-nav w-50 float-end" style="background-color: var(--navbar-color);">
+                <a class="nav-link bg-warning text-end" aria-current="page" href="#" style="background-color: yellow;">Home</a>
+                <a class="nav-link text-end" href="javascript.html">JavaScript</a>
+                <a class="nav-link text-end" href="forms.html">Forms</a>
+                <a class="nav-link text-end" href="xml-rss.html">XML/Json</a>
+                <a class="nav-link text-end" href="my-research.html">Research</a>
+            </div>
+          </div>
+          <!-- Button for larger screens-->
+            <button class="btn d-none d-lg-inline" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#collapseSearchBox">
+              <span class="bi bi-search fs3"></span>
+            </button>
+        </div>
+      </nav>
+    
+    <!--Main Section-->
+    <main>
+      <!--Blurred background image + text-->
+      <!--Showcase Section-->
+    <section class="container-fluid searchable" style="height: 30vh;" id="Showcase">
+      <div class="bg-image"></div>
+      <div class="bg-text">
+        <p>Advanced Internet and Web Page Development</p>
+        <h1>I am Artem Hrytsenko</h1>
+        <p>And I'm a Web Developer</p>
+      </div>
+      </div>
+    </section>
+    
+    <!--Web Tech + BIO Section-->
+
+    <div class="container-fluid">
+      <div class="row">
+
+        <!--Bio Section-->
+        <section class="col-12 col-lg-6 searchable" style="min-height: 30vh; background-color: var(--bio-color); padding: 20px;"
+          id="Bio">
+          <h3>BIO</h3>
+          <div class="container">
+            <div class="row">
+              <!-- Avatar -->
+              <div class="col-lg-6 col-12 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
+                <img style="max-width:20vw; height: auto;" class="rounded-circle" src="IMAGES-20240726/avataaars.png" alt="avatar">
+              </div>
+
+              <!-- About Me -->
+              <div class="col-lg-6 col-12">
+                <p class="sub-item">I am Artem Hrytsenko. I am excited to share a little bit about myself. I am studying at EIT and doing 
+                  Bachelors Degree in Computing Systems.</p>
+                <p class="sub-item">I like to go outdoors and explore as much nature as I can. I'm taking this course because I love computers
+                  and for me this filed always seemed interesting. </p>
+                <p class="sub-item">I'm taking Advanced Web Page Development Course to enhance my skills in develeoping websites and create a strong portfolio as a developer.
+              </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--Web technologies section-->
+        <section class="col-12 col-lg-6 searchable" id="WebTech"
+          style="min-height: 30vh; background-color: var(--webtech-color); padding: 20px;">
+          <h3 class="webtechnologyheading">My Web Technologies</h3>
+          <h4 class="webtechnologyheading-2">TOP 5 WEB TECHNOLOGIES</h4>
+          <div class="web-tech">
+            <ol class="web-tech-li">
+              <li class="technology-heading"><span>HTML (HyperText Markup Language)</span> The foundational language for creating and structuring web content. It defines the structure of web pages using elements like headings, paragraphs, and links.</li> <br>
+              <li class="technology-heading"><span>CSS (Cascading Style Sheets):</span> A stylesheet language used to control the presentation of web pages, including layout, colors, fonts, and overall design, making web content visually appealing.</li> <br>
+              <li class="technology-heading"><span>JavaScript:</span> A programming language that adds interactivity and dynamic features to web pages, such as form validation, animations, and real-time updates.
+              </li> <br>
+              <li class="technology-heading"><span>Bootstrap: </span> A popular front-end framework that simplifies web design by providing pre-built responsive layouts, components, and utilities, making it easier to build mobile-first websites.</li> <br>
+              <li class="technology-heading"><span>GitHub: </span> A platform for version control and collaboration that allows developers to host code repositories, track changes, and collaborate on web development projects with others.</li> <br>
+            </ol>
+          </div>
+        </section>
+      </div>
+    </div>
+      <!--WEB DEV Competence Section-->
+      <section class="searchable" style="min-height: 30vh; background-color: var(--competence-color); padding: 20px;" id="Competency">
+        <h3>My Competence</h3>
+        <section class="d justify-content-between">
+          <div class="row">
+            <div class="col-12 col-lg-4" style="padding: 10px;">
+              <div class="flip-box">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <h3 id="FlipTitle">MARKUP</h3>
+                    <h3 id="FlipTitle">(HTML5)</h3>
+                    <img src="IMAGES-20240726/html5.png" id="flipimg"></img>
+                  </div>
+                  <div class="flip-box-back">
+                    <p>I have a medium comptenece developing websites using HTML</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-12 col-lg-4" style="padding: 10px;">
+              <div class="flip-box">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <h3 id="FlipTitle">STYLING</h3>
+                    <h3 id="FlipTitle">(CSS3)</h3>
+                    <img src="IMAGES-20240726/css3.png" id="flipimg"></img>
+                  </div>
+                  <div class="flip-box-back">
+                    I have a medium Competence in using CSS3 to style the web page  
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-12 col-lg-4" style="padding: 10px;">
+              <div class="flip-box">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <h3 id="FlipTitle">INTERACTIVITY</h3>
+                    <h3 id="FlipTitle">(JavaScript)</h3>
+                    <img src="IMAGES-20240726/javascript.png" id="flipimg"><img>
+                  </div>
+                  <div class="flip-box-back">
+                    I have a medium competence in using javascript to add interactivity to the webpage
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+  
+
+      <!--Authenticity Section-->
+      <section style="min-height: 20vh; background-color: var(--statement-color);">
+        <div class="container-fluid">
+          <h3>STATEMENT OF AUTHENTICITY</h3>
+          <p style="margin-left: 150px;">I confirm that:<br>This is an original assessment and is entirely my own work. <br> It contains no material previously published or written by another <br> person or myself except where due acknowledgement is made in the text. <br> No material which to a substantial extent, has been submitted for any other academic course, is included without acknowledgement.” </p>
+        </div>    
+      </section>
+    </main>
+
+    <footer style="background-color: var(--navbar-color);">
+      <div class="container justify-content-around">
+        <!-- Footer content -->
+        <div class="row text-center text-md-start">
+          <!-- Social media div -->
+          <div class="col">
+            <a href="https://www.facebook.com" class="mx-2"><span class="fs-1 bi bi-facebook"
+                style="color:blue;"></span></a>
+            <a href="https://www.twitter.com" class="mx-2"><span class="fs-1 bi bi-twitter"
+                style="color:lightblue;"></span></a>
+            <a href="https://www.youtube.com" class="mx-2"><span class="fs-1 bi bi-youtube" style="color:red;"></span></a>
+            <a href="https://www.instagram.com" class="mx-2"><span class="fs-1 bi bi-instagram"
+                style="color:pink;"></span></a>
+            <a href="https://www.linkedin.com" class="mx-2"><span class="fs-1 bi bi-linkedin"
+                style="color:white;"></span></a>
+          </div>
+  
+          <!-- Copyright div -->
+          <div class="col">
+            <p class="fs-5 mb-0"><span class="bi bi-c-circle"></span> 2024 Artem Hrytsenko</p>
+          </div>
+  
+          <!-- Privacy policy div -->
+          <div class="col">
+            <a href="#" class="fs-5">Privacy Policy</a>
+          </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html> 
