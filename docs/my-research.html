@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Header Section-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1</title>
+    <!--Insert bootstrap CSS file-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <!--Connect Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--Align nav items to center-->
+    <style>
+      :root {
+        --navbar-color: #DAF7A6;
+        --showcase-color: #000000;
+        --bio-color: #FFC300;
+        --webtech-color: #EC7063;
+        --competence-color: #9CDA0D;
+        --statement-color: #F27A09;
+      }
+      .navbar-nav.navbar-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .bg-image {
+        background-image: url(IMAGES-20240726/javascript-code.jpg);
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+      .bg-text {
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        position: relative;
+        top: -50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        padding: 10px;
+        text-align: center;
+        
+      }
+      
+    .flip-card {
+      perspective: 1000px;
+      height: 300px;
+      width: 100%;
+      background-color: transparent;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border: 2px solid #e1c76e;
+    }
+    .flip-card-front {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .flip-card-back {
+      background-color: #f8f9fa;
+      transform: rotateY(180deg);
+      padding: 20px;
+      text-align: center;
+      overflow-y: auto;
+    }
+    .flip-card img {
+      width: 100%;
+      height: 100px;
+    }
+
+    </style>
+</head>
+
+
+<!--Body Section-->
+<body>
+
+  <!--Add the search area containing search box and search button-->
+
+  <div class="collapse" id="collapseSearchBox">
+    <form>
+      <input type="search">
+      <button class="btn btn-outline-success" type="submit">Search</button> 
+    </form>
+
+  </div>
+
+    <!--Bootstrap navbar-->
+    <nav class="navbar navbar-expand-lg" style="height: 10vh; background-color: var(--navbar-color);">
+        <div class="container-fluid border-primary">
+          <!--Globe Icon-->            
+            <a class="navbar-brand" href="#"><span class="fs-2 bi bi-globe"></span>ITWD6.408</a>
+
+            <!--Insert Search Icon for SMALL SCREENS-->
+            <button class="btn d-inline d-lg-none" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#collapseSearchBox">
+              <span class="bi bi-search fs3"></span>
+            </button>
+
+            <!--This is a hamburger menu button (responsive design)-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          
+          <!--Nav bar + items + center the navbar-->
+            <div class="collapse navbar-collapse d-lg-flex justify-content-center" id="navbarSupportedContent">
+            <div class="navbar-nav w-50 float-end" style="background-color: var(--navbar-color);">
+                <a class="nav-link bg-warning text-end" aria-current="page" href="index.html" style="background-color: yellow;">Home</a>
+                <a class="nav-link text-end" href="javascript.html">JavaScript</a>
+                <a class="nav-link text-end" href="forms.html">Forms</a>
+                <a class="nav-link text-end" href="xml-rss.html">XML/Json</a>
+                <a class="nav-link text-end" href="my-research.html">Research</a>
+            </div>
+          </div>
+          <!-- Button for larger screens-->
+            <button class="btn d-none d-lg-inline" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#collapseSearchBox">
+              <span class="bi bi-search fs3"></span>
+            </button>
+        </div>
+      </nav>
+
+
+      <body>
+        <div class="container mt-5">
+            <div class="row g-4">
+              <!-- First Flip Card -->
+              <div class="col-md-4">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img class="img-fluid" src="IMAGES-20240726/research-copyright.jpg" alt="Creative Commons">
+                    </div>
+                    <div class="flip-card-back">
+                      <h5 class="h4">Copyright, Creative Common (CC) Licenses, Fair Use</h5>
+                      <p class="lead">Copyright protects the original works of creators, giving them the exclusive rights to reproduce, distribute, perform, or display their work. This applies to literature, music, art, software, and more. Copyright is automatic and doesn't require registration.</p>
+                      <p class="lead">Attribution (CC BY): Allows others to copy, distribute, remix, and build upon the work, even commercially, as long as the original creator is credited.
+                        Attribution-ShareAlike (CC BY-SA): Similar to CC BY, but derivatives must be licensed under identical terms.
+                        Attribution-NoDerivs (CC BY-ND): Allows redistribution, commercial and non-commercial, but no modifications or adaptations.
+                        Attribution-NonCommercial (CC BY-NC): Allows others to remix, adapt, and build upon the work non-commercially, with proper credit to the creator.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Second Flip Card -->
+              <div class="col-md-4">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img class="img-fluid" src="IMAGES-20240726/privacy policy.jpg" alt="Privacy Policy">
+                    </div>
+                    <div class="flip-card-back">
+                      <h5 class="h4">Privacy & Web Privacy Policy</h5>
+                      <p class="lead">A privacy policy is a legal document that outlines how a website or business collects, uses, stores, and protects user data. It ensures transparency and compliance with data protection laws.</p>
+                      <p class="lead">1. Purpose of collection: Collect information for a lawful purpose. <br>
+                        2. Source of information: Collect directly from the individual concerned, unless exceptions apply. <br>
+                        3. Collection methods: Use lawful and fair means of collection. <br>
+                        4. Notice of collection: Inform individuals when collecting their information. <br>
+                        5. Use of information: Only use personal data for the purposes it was collected. <br>
+                        6. Accuracy of information: Ensure data is accurate and up-to-date. <br>
+                        7. Correction rights: Allow individuals to access and correct their data. <br>
+                        8. Storage security: Keep personal data secure from loss or unauthorized access. <br>
+                        9. Retention: Don’t keep information longer than necessary. <br>
+                        10. Use for additional purposes: Only use data for other purposes if permitted by law. <br>
+                        11. Disclosure of information: Disclose data only for the purpose it was collected. <br>
+                        12. International disclosures: Ensure data is protected when disclosed overseas. <br>
+                        13. Unique identifiers: Use unique identifiers carefully and only when necessary.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Third Flip Card -->
+              <div class="col-md-4">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img class="img-fluid" src="IMAGES-20240726/SEO image.jpg" alt="SEO">
+                    </div>
+                    <div class="flip-card-back">
+                      <h5 class="h4">How to Improve Your Website SEO?</h5>
+                      <p class="lead">
+                        1. Keyword Optimization: Use relevant and targeted keywords in your titles, meta descriptions, headings, and content. <br>
+                        2. Quality Content: Publish original, engaging, and valuable content regularly to improve rankings and user engagement. <br>
+                        3. Mobile Optimization: Ensure your website is mobile-friendly and responsive, as search engines prioritize mobile-friendly sites. <br>
+                        4. Site Speed: Fast-loading websites rank better in search engines. Optimize images and minimize the use of heavy scripts. <br>
+                        5. Backlinking: Increase your website’s authority by gaining high-quality backlinks from reputable websites.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Fourth Flip Card -->
+              <div class="col-md-4">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img class="img-fluid" src="IMAGES-20240726/web hosting (1).jpg" alt="Web Hosting">
+                    </div>
+                    <div class="flip-card-back">
+                      <h5 class="h4">Choosing the Right Web Hosting Provider</h5>
+                      <p class="lead">
+                        1. Uptime and Reliability: Choose a host with a high uptime guarantee (99.9%) to ensure your website stays online. <br>
+                        2. Customer Support: Look for 24/7 customer support that can help solve technical issues quickly. <br>
+                        3. Scalability: The hosting provider should offer scalable plans that can grow with your website’s needs. <br>
+                        4. Pricing: Choose a provider that offers transparent pricing without hidden fees, and aligns with your budget. <br>
+                        5. Security Features: Ensure the host provides security features such as SSL certificates, firewalls, and regular backups.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Fifth Flip Card -->
+              <div class="col-md-4">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img class="img-fluid" src="IMAGES-20240726/web performance and maintenace.jpg" alt="Web Performance">
+                    </div>
+                    <div class="flip-card-back">
+                      <h5 class="h4">Web Performance and Maintenance</h5>
+                      <p class="lead">
+                        1. Optimize Images: Compress images without sacrificing quality to reduce load time. <br>
+                        2. Minimize HTTP Requests: Combine files like CSS and JavaScript to reduce server requests. <br>
+                        3. Enable Browser Caching: Store resources locally to reduce reloading time when a user revisits your website. <br>
+                        4. Use a Content Delivery Network (CDN): Distribute your website’s static files across global servers to reduce latency. <br>
+                        5. Lazy Loading: Load images and content as users scroll down the page to improve initial page load speed.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Sixth Flip Card -->
+              <div class="col-md-4">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img class="img-fluid" src="IMAGES-20240726/cyber security.jpg" alt="Web Security">
+                    </div>
+                    <div class="flip-card-back">
+                      <h5 class="h4">Web Security</h5>
+                      <p class="lead">
+                        1. Phishing: Attackers trick users into providing sensitive information. <br> Prevention: Train employees to recognize phishing emails and use multi-factor authentication (MFA). <br>
+                        2. SQL Injection: Attackers exploit vulnerabilities in your database. <br> Prevention: Use parameterized queries and input validation. <br>
+                        3. Cross-Site Scripting (XSS): Attackers inject malicious scripts into web pages viewed by users. <br> Prevention: Sanitize user inputs and escape HTML. <br>
+                        4. DDoS (Distributed Denial of Service): Attackers overwhelm your site with traffic to make it unavailable. <br> Prevention: Use a CDN, load balancer, and web application firewall (WAF). <br>
+                        5. Ransomware: Attackers encrypt your data and demand payment to restore access. <br> Prevention: Use strong backups, patch vulnerabilities regularly, and employ robust endpoint security.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </body>
+
+      <!--Footer Section-->
+      <footer style="background-color: var(--navbar-color);">
+        <div class="container justify-content-around">
+          <!-- Footer content -->
+          <div class="row text-center text-md-start">
+            <!-- Social media div -->
+            <div class="col">
+              <a href="https://www.facebook.com" class="mx-2"><span class="fs-1 bi bi-facebook"
+                  style="color:blue;"></span></a>
+              <a href="https://www.twitter.com" class="mx-2"><span class="fs-1 bi bi-twitter"
+                  style="color:lightblue;"></span></a>
+              <a href="https://www.youtube.com" class="mx-2"><span class="fs-1 bi bi-youtube" style="color:red;"></span></a>
+              <a href="https://www.instagram.com" class="mx-2"><span class="fs-1 bi bi-instagram"
+                  style="color:pink;"></span></a>
+              <a href="https://www.linkedin.com" class="mx-2"><span class="fs-1 bi bi-linkedin"
+                  style="color:white;"></span></a>
+            </div>
+    
+            <!-- Copyright div -->
+            <div class="col">
+              <p class="fs-5 mb-0"><span class="bi bi-c-circle"></span> 2024 Artem Hrytsenko</p>
+            </div>
+    
+            <!-- Privacy policy div -->
+            <div class="col">
+              <a href="#" class="fs-5">Privacy Policy</a>
+            </div>
+          </div>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
